@@ -34,5 +34,24 @@
 </head>
 <body>
   <script src="flutter_bootstrap.js" async></script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDH2cV_lTt9MbOqg8UnI2EtvEgg9h8oMh0",
+      authDomain: "housedecoration-2024.firebaseapp.com",
+      projectId: "housedecoration-2024",
+      storageBucket: "housedecoration-2024.appspot.com",
+      messagingSenderId: "101108715425",
+      appId: "1:101108715425:web:f586e06210a2677e8485e0"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  </script>
 </body>
 </html>
