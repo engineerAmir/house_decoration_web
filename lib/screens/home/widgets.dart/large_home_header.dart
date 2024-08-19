@@ -19,16 +19,16 @@ class LargeHomeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _width = MediaQuery.of(context).size.width;
-    var _height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
 
     return Stack(children: [
       Container(
-          height: _height - 100,
+          height: height - 100,
           //: ResponsiveWidget.isLargeScreen(context)? _height-100 : ,
-          width: _width,
+          width: width,
           decoration: BoxDecoration(
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                     color: backGround,
                     offset: Offset(10, 0),
@@ -47,7 +47,7 @@ class LargeHomeHeader extends StatelessWidget {
                 style: normalText.copyWith(fontWeight: FontWeight.bold),
 
               ),
-              SizedBox(
+              const SizedBox(
                 height: 100,
               ),
               Text(title,
@@ -60,13 +60,13 @@ class LargeHomeHeader extends StatelessWidget {
                 
                 maxLines: 2,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontStyle: FontStyle.italic, fontSize: 20),
+                style: const TextStyle(fontStyle: FontStyle.italic, fontSize: 20),
               )
             ],
           )),
       Positioned(
           left: 40,
-          top: _height / 2,
+          top: height / 2,
           child: IconButton(
             icon: Icon(
               switchLangController.selectedLang == 'en'
@@ -79,7 +79,7 @@ class LargeHomeHeader extends StatelessWidget {
           )),
       Positioned(
           right: 40,
-          top: _height / 2,
+          top: height / 2,
           child: IconButton(
             icon: Icon(switchLangController.selectedLang == 'en'
                 ? Icons.arrow_forward_ios_rounded

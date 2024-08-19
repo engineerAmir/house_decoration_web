@@ -16,10 +16,10 @@ class OurServicesWidget extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(color: dark, boxShadow: shadow),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
@@ -31,9 +31,9 @@ class OurServicesWidget extends StatelessWidget {
                 )
               ],
             ),
-            Divider(),
+            const Divider(),
            
-            Container(
+            SizedBox(
              // alignment: Alignment.center,
               height: 600,
               width: double.infinity,

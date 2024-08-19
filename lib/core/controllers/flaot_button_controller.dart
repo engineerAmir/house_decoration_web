@@ -26,7 +26,6 @@ class FlaotButtonController extends GetxController {
         }
       }
     } catch (e) {
-      print('object');
       await launchUrl(Uri.parse(webUrl), mode: LaunchMode.externalApplication);
     }
   }

@@ -7,7 +7,7 @@ class TextFieldWidget extends StatelessWidget {
   final lines ;
   final  labalText ;
   final scure ; 
-   TextFieldWidget({super.key,  required this.labalText, required this.scure, this.lines});
+   const TextFieldWidget({super.key,  required this.labalText, required this.scure, this.lines});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class TextFieldWidget extends StatelessWidget {
 OutlineInputBorder outlineBorderStyle() {
   return OutlineInputBorder(
     borderRadius: BorderRadius.circular(10),
-    borderSide: BorderSide(color: lightGold)
+    borderSide: const BorderSide(color: lightGold)
     
   );
 }

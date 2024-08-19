@@ -11,28 +11,27 @@ class ImageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //PageController controller = PageController();
-    return Obx(() => Container(
-            child: PhotoViewGallery(
-          scrollPhysics:  BouncingScrollPhysics(),
-
-          pageOptions: projectsController.currentProject
-              .map((item) =>
-                  PhotoViewGalleryPageOptions(imageProvider: AssetImage(item)))
-              .toList(),
-          loadingBuilder: (context, event) => Center(
-            child: Container(
-              width: 20.0,
-              height: 20.0,
-              // child: CircularProgressIndicator(
-              //   value: event == null
-              //       ? 0
-              //       : event.cumulativeBytesLoaded / event.expectedTotalBytes,
-              // ),
-            ),
-          ),
-          //backgroundDecoration: widget.backgroundDecoration,
-          pageController: projectsController.imageController,
-          // onPageChanged: onPageChanged,
-        )));
+    return Obx(() => PhotoViewGallery(
+              scrollPhysics:  const BouncingScrollPhysics(),
+    
+              pageOptions: projectsController.currentProject
+      .map((item) =>
+          PhotoViewGalleryPageOptions(imageProvider: AssetImage(item)))
+      .toList(),
+              loadingBuilder: (context, event) => const Center(
+    child: SizedBox(
+      width: 20.0,
+      height: 20.0,
+      // child: CircularProgressIndicator(
+      //   value: event == null
+      //       ? 0
+      //       : event.cumulativeBytesLoaded / event.expectedTotalBytes,
+      // ),
+    ),
+              ),
+              //backgroundDecoration: widget.backgroundDecoration,
+              pageController: projectsController.imageController,
+              // onPageChanged: onPageChanged,
+            ));
   }
 }

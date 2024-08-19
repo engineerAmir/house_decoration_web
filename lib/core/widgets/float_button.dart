@@ -12,39 +12,37 @@ class FloatButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: SpeedDial(
-        child: Image.asset(Assets.socilaIcon),
-        backgroundColor: hover,
-        children: [
-          SpeedDialChild(
-
-              //shape:BeveledRectangleBorder(borderRadius: BorderRadius.circular(100)) ,
-              onTap: () => flaotButtonController.whatsapp(),
-              backgroundColor: Colors.white.withOpacity(0),
-              child: Image.asset(
-                Assets.whatsAppIcon,
-              )),
-          SpeedDialChild(
-              backgroundColor: Colors.white.withOpacity(0),
-              onTap: () => flaotButtonController.facebook(),
-              child: Image.asset(
-                Assets.facebookIcon,
-              )),
-          SpeedDialChild(
-              backgroundColor: Colors.white.withOpacity(0),
-              onTap: () => flaotButtonController.insta(),
-              child: Image.asset(Assets.instaIcon)),
-          SpeedDialChild(
-              backgroundColor: Colors.white.withOpacity(0),
-              onTap: () =>flaotButtonController.tiktok(),
-              child: Image.asset(Assets.tiktokIcon)),
-          SpeedDialChild(
-              backgroundColor: Colors.white.withOpacity(0),
-              onTap:() => flaotButtonController.mail(),
-              child: Image.asset(Assets.mailIcon)),
-        ],
-      ),
+    return SpeedDial(
+      backgroundColor: hover,
+      children: [
+        SpeedDialChild(
+    
+            //shape:BeveledRectangleBorder(borderRadius: BorderRadius.circular(100)) ,
+            onTap: () => flaotButtonController.whatsapp(),
+            backgroundColor: Colors.white.withOpacity(0),
+            child: Image.asset(
+              Assets.whatsAppIcon,
+            )),
+        SpeedDialChild(
+            backgroundColor: Colors.white.withOpacity(0),
+            onTap: () => flaotButtonController.facebook(),
+            child: Image.asset(
+              Assets.facebookIcon,
+            )),
+        SpeedDialChild(
+            backgroundColor: Colors.white.withOpacity(0),
+            onTap: () => flaotButtonController.insta(),
+            child: Image.asset(Assets.instaIcon)),
+        SpeedDialChild(
+            backgroundColor: Colors.white.withOpacity(0),
+            onTap: () =>flaotButtonController.tiktok(),
+            child: Image.asset(Assets.tiktokIcon)),
+        SpeedDialChild(
+            backgroundColor: Colors.white.withOpacity(0),
+            onTap:() => flaotButtonController.mail(),
+            child: Image.asset(Assets.mailIcon)),
+      ],
+      child: Image.asset(Assets.socilaIcon),
     );
   }
 }

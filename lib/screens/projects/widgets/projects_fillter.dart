@@ -8,7 +8,7 @@ class ProjectsFillter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 60),
+      padding: const EdgeInsets.only(top: 60),
       child: SingleChildScrollView(
         
        scrollDirection: Axis.vertical,
@@ -22,7 +22,7 @@ class ProjectsFillter extends StatelessWidget {
                         projectName: item['name'],
                         img: item['reception'][0].toString(),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                         width: 100,
                         child: Divider(height: 5, color: Colors.white,),

@@ -17,7 +17,7 @@ class ProjectWidget extends StatelessWidget {
   Widget build(BuildContext context) {
      double _width = MediaQuery.of(context).size.width;
     return Obx(
-      () => Container(
+      () => SizedBox(
         width: _width - 200,
        
           child: StaggeredGrid.count(

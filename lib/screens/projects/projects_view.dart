@@ -14,8 +14,7 @@ class ProjectsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double _width = MediaQuery.of(context).size.width;
-    return Row(
+    return const Row(
       children: [
         ProjectsFillter(),
         SingleChildScrollView(

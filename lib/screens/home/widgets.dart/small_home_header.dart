@@ -6,7 +6,6 @@ import 'package:house_decoration_web/core/constants/colors.dart';
 import 'package:house_decoration_web/core/constants/controllers.dart';
 
 import 'package:house_decoration_web/core/constants/text_style.dart';
-import 'package:house_decoration_web/core/helpers/responsiveness.dart';
 
 
 class SmallHomeHeader extends StatelessWidget {
@@ -18,17 +17,17 @@ class SmallHomeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _width = MediaQuery.of(context).size.width;
-    var _height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
 
     return Stack(children: [
       Container(
-        padding: EdgeInsets.symmetric(horizontal: 20),
-          height: _height /2,
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+          height: height /2,
           //: ResponsiveWidget.isLargeScreen(context)? _height-100 : ,
-          width: _width,
+          width: width,
           decoration: BoxDecoration(
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                     color: backGround,
                     offset: Offset(10, 0),
@@ -43,15 +42,15 @@ class SmallHomeHeader extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(welcome.tr, style: normalText.copyWith(fontWeight: FontWeight.bold, ), ),
-              SizedBox(height: 30,),
+              const SizedBox(height: 30,),
               Text(title,
                   style: normalText.copyWith(fontWeight: FontWeight.bold,color: darkGold) , maxLines: 4,),
-                  Text(subTitle, style: TextStyle(fontStyle: FontStyle.italic,fontSize: 10 ),)
+                  Text(subTitle, style: const TextStyle(fontStyle: FontStyle.italic,fontSize: 10 ),)
             ],
           )),
       Positioned(
           left: 10,
-          top: _height / 5,
+          top: height / 5,
           child: IconButton(
             icon: Icon(
               switchLangController.selectedLang == 'en'
@@ -64,7 +63,7 @@ class SmallHomeHeader extends StatelessWidget {
           )),
       Positioned(
           right: 10,
-          top: _height / 5,
+          top: height / 5,
           child: IconButton(
             icon: Icon(switchLangController.selectedLang == 'en'
                 ? Icons.arrow_forward_ios_rounded

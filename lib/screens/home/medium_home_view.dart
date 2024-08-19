@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import, unused_local_variable
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:house_decoration_web/core/constants/controllers.dart';
@@ -13,13 +15,13 @@ class MediumHomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     var _width = MediaQuery.of(context).size.width;
-    var _height = MediaQuery.of(context).size.height;
+     var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     return SingleChildScrollView(
       
       child: Column(children: [
-        Container(
-          height: _height,
+        SizedBox(
+          height: height,
           child: PageView.builder(
               controller: homeController.controller,
               scrollDirection: Axis.horizontal,
@@ -30,12 +32,12 @@ class MediumHomeView extends StatelessWidget {
                     subTitle: pageHeader[index][2].toString().tr,
                   )),
         ),
-                OurServicesWidget()
+                const OurServicesWidget()
                 ,
-                SizedBox(height: 50,),
-                HomeProjectsWidget(),
-                SizedBox(height: 30,),
-                Processes()
+                const SizedBox(height: 50,),
+                const HomeProjectsWidget(),
+                const SizedBox(height: 30,),
+                const Processes()
       ]),
     );
   }

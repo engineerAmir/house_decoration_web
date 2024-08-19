@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:house_decoration_web/core/constants/app_texts.dart';
@@ -17,8 +19,7 @@ class SmallHomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _width = MediaQuery.of(context).size.width;
-    var _height = MediaQuery.of(context).size.height;
+    var height = MediaQuery.of(context).size.height;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 2),
@@ -26,7 +27,7 @@ class SmallHomeView extends StatelessWidget {
         child: Column(children: [
           Container(
             decoration: BoxDecoration(boxShadow: shadow),
-            height: _height / 2,
+            height: height / 2,
             child: PageView.builder(
                 controller: homeController.controller,
                 scrollDirection: Axis.horizontal,

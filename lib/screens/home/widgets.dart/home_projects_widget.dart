@@ -18,13 +18,13 @@ class HomeProjectsWidget extends StatelessWidget {
     if (ResponsiveWidget.isLargeScreen(context)) {
       return SingleChildScrollView(
         scrollDirection: Axis.horizontal,
-        child: Container(
+        child: SizedBox(
           height: 300,
           child: Row(
             
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               Text(
@@ -32,11 +32,11 @@ class HomeProjectsWidget extends StatelessWidget {
                 style: largeText.copyWith(
                     fontWeight: FontWeight.bold, color: darkGold),
               ),
-              VerticalDivider(
+              const VerticalDivider(
               
           
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
                 width: 30,
               ),
@@ -45,7 +45,7 @@ class HomeProjectsWidget extends StatelessWidget {
                   title: projectsRoute[0][1].toString(),
                   projectName: projectsRoute[0][0],
                   route: projectsRoute[0][0]),
-              SizedBox(
+              const SizedBox(
                 height: 50,
                 width: 30,
               ),
@@ -54,7 +54,7 @@ class HomeProjectsWidget extends StatelessWidget {
                   title: projectsRoute[1][1].toString(),
                   projectName: projectsRoute[1][0],
                   route: projectsRoute[1][0]),
-              SizedBox(
+              const SizedBox(
                 height: 50,
                 width: 30,
               ),
@@ -63,7 +63,7 @@ class HomeProjectsWidget extends StatelessWidget {
                   title: projectsRoute[2][1].toString(),
                   projectName: projectsRoute[2][0],
                   route: projectsRoute[2][0]),
-              SizedBox(
+              const SizedBox(
                 height: 50,
                 width: 30,
               ),
@@ -72,7 +72,7 @@ class HomeProjectsWidget extends StatelessWidget {
                   title: projectsRoute[3][1].toString(),
                   projectName: projectsRoute[3][0],
                   route: projectsRoute[3][0]),
-              SizedBox(
+              const SizedBox(
                 height: 50,
                 width: 30,
               ),
@@ -97,7 +97,7 @@ class HomeProjectsWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 50,
                 width: 30,
               ),
@@ -106,7 +106,7 @@ class HomeProjectsWidget extends StatelessWidget {
                   title: projectsRoute[0][1].toString(),
                   projectName: projectsRoute[0][0],
                   route: projectsRoute[0][0]),
-              SizedBox(
+              const SizedBox(
                 height: 50,
                 width: 30,
               ),
@@ -115,20 +115,20 @@ class HomeProjectsWidget extends StatelessWidget {
                   title: projectsRoute[1][1].toString(),
                   projectName: projectsRoute[1][0],
                   route: projectsRoute[1][0]),
-              SizedBox(
+              const SizedBox(
                 height: 50,
                 width: 30,
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
             width: 30,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 50,
                 width: 30,
               ),
@@ -137,7 +137,7 @@ class HomeProjectsWidget extends StatelessWidget {
                   title: projectsRoute[2][1].toString(),
                   projectName: projectsRoute[2][0],
                   route: projectsRoute[2][0]),
-              SizedBox(
+              const SizedBox(
                 height: 50,
                 width: 30,
               ),
@@ -146,7 +146,7 @@ class HomeProjectsWidget extends StatelessWidget {
                   title: projectsRoute[3][1].toString(),
                   projectName: projectsRoute[3][0],
                   route: projectsRoute[3][0]),
-              SizedBox(
+              const SizedBox(
                 height: 50,
                 width: 30,
               ),
@@ -176,8 +176,8 @@ class HomeProjectsWidget extends StatelessWidget {
             style: largeText.copyWith(
                 fontWeight: FontWeight.bold, color: darkGold),
           ),
-          Divider(),
-          SizedBox(
+          const Divider(),
+          const SizedBox(
             height: 20,
             width: 200,
           ),
@@ -186,7 +186,7 @@ class HomeProjectsWidget extends StatelessWidget {
               title: projectsRoute[0][1].toString(),
               projectName: projectsRoute[0][0],
               route: projectsRoute[0][0]),
-          SizedBox(
+          const SizedBox(
             height: 50,
             width: 200,
             child: Divider(),
@@ -196,7 +196,7 @@ class HomeProjectsWidget extends StatelessWidget {
               title: projectsRoute[1][1].toString(),
               projectName: projectsRoute[1][0],
               route: projectsRoute[1][0]),
-          SizedBox(
+          const SizedBox(
             height: 50,
             width: 200,
             child: Divider(),
@@ -206,7 +206,7 @@ class HomeProjectsWidget extends StatelessWidget {
               title: projectsRoute[2][1].toString(),
               projectName: projectsRoute[2][0],
               route: projectsRoute[2][0]),
-          SizedBox(
+          const SizedBox(
             height: 50,
             width: 200,
             child: Divider(),
@@ -216,7 +216,7 @@ class HomeProjectsWidget extends StatelessWidget {
               title: projectsRoute[3][1].toString(),
               projectName: projectsRoute[3][0],
               route: projectsRoute[3][0]),
-          SizedBox(
+          const SizedBox(
             height: 50,
             width: 200,
             child: Divider(),

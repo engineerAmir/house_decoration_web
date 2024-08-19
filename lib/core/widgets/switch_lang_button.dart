@@ -11,6 +11,6 @@ class SwitchLangButton extends StatelessWidget {
     return TextButton(onPressed: (){ 
     switchLangController.switchLang();
     
-  }, child: Text('lang'.tr, style: TextStyle(color: Colors.white),));
+  }, child: Text('lang'.tr, style: const TextStyle(color: Colors.white),));
   }
 }

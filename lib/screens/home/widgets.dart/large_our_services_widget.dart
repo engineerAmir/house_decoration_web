@@ -29,11 +29,11 @@ class LargeOurServicesWidget extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(height: 30,),
+                const SizedBox(height: 30,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                     SizedBox(
+                     const SizedBox(
                       width: 5,
                     ),
                     ServiceContainer(
@@ -42,7 +42,7 @@ class LargeOurServicesWidget extends StatelessWidget {
                       description: residentialInteriorDesignDesc.tr,
                       color: true, img: Assets.assetsImagesAlmazaBedroom11,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                     ServiceContainer(
@@ -50,7 +50,7 @@ class LargeOurServicesWidget extends StatelessWidget {
                       subTitle: commercialInteriorDesign.tr,
                       description: commercialInteriorDesignDesc.tr,
                       color: false, img: Assets.assetsImagesAlmazaReception2,
-                    ), SizedBox(
+                    ), const SizedBox(
                       width: 5,
                     ),
                     ServiceContainer(
@@ -59,7 +59,7 @@ class LargeOurServicesWidget extends StatelessWidget {
                       description: spacePlanningLayoutDesc.tr,
                       color: true, img: Assets.assetsImagesWestSomidLandscape3,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                     ServiceContainer(
@@ -68,19 +68,19 @@ class LargeOurServicesWidget extends StatelessWidget {
                       description: customFurnitureDecorDesc.tr,
                       color: false, img: Assets.assetsImagesWestSomidLandscape2,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                   
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                     SizedBox(
+                     const SizedBox(
                       width: 5,
                     ),
                     ServiceContainer(
@@ -89,7 +89,7 @@ class LargeOurServicesWidget extends StatelessWidget {
                       description: renovationRemodelingDesc.tr,
                       color: false, img: Assets.assetsImagesWestSomidReception6,
                     ),
-                     SizedBox(
+                     const SizedBox(
                       width: 5,
                     ),
                     ServiceContainer(
@@ -98,7 +98,7 @@ class LargeOurServicesWidget extends StatelessWidget {
                       description: colorConsultationDesc.tr,
                       color: true, img: Assets.assetsImagesWestSomidReception2,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                     ServiceContainer(
@@ -107,7 +107,7 @@ class LargeOurServicesWidget extends StatelessWidget {
                       description: homeStagingDesc.tr,
                       color: false, img: Assets.assetsImagesAlmazaReception6,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                     ServiceContainer(
@@ -116,11 +116,11 @@ class LargeOurServicesWidget extends StatelessWidget {
                       description: constructionServicesDesc.tr,
                       color: true, img: Assets.assetsImagesAlmazaMasterBedroomtoiletToilet1,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                   ],
-                ),SizedBox(
+                ),const SizedBox(
                   height: 50,
                 ),
               ],

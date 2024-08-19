@@ -13,11 +13,11 @@ class ContactHeaderPage extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: shadow,
         
-          image: DecorationImage(
+          image: const DecorationImage(
             opacity: 0.5,
               image: AssetImage(Assets.assetsImagesAlmazaReception19),
               fit: BoxFit.cover)),
-              child: Center(child: Text('Contacts', style: TextStyle(fontSize: 60),)),
+              child: const Center(child: Text('Contacts', style: TextStyle(fontSize: 60),)),
     );
   }
 }

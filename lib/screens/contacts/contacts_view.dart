@@ -12,7 +12,7 @@ class ContactsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       child: Column(
         children: [
           ContactHeaderPage(),

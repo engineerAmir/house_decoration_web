@@ -1,7 +1,8 @@
+// ignore_for_file: avoid_web_libraries_in_flutter, library_private_types_in_public_api
+
 import 'dart:html';
 import 'dart:ui_web';
 import 'package:flutter/material.dart';
-import 'dart:ui' as ui;
 
 import 'package:house_decoration_web/core/helpers/responsiveness.dart';
 import 'package:house_decoration_web/core/widgets/shadow.dart';
@@ -42,7 +43,7 @@ class _GMapsHtmlState extends State<GMapsHtml> {
             decoration: BoxDecoration(
               boxShadow: shadow,
                 border: Border.all(
-                    width: 10, color: Color.fromARGB(126, 99, 94, 94))),
+                    width: 10, color: const Color.fromARGB(126, 99, 94, 94))),
             child: HtmlElementView(
               viewType: widget.url,
             )));

@@ -34,18 +34,16 @@ class DrawerItemWidget extends StatelessWidget {
     //   );
     // } else {
 
-      return Container(
-        child: ListTile(
-          focusColor: darkGold,
-          hoverColor: darkGold,
-
-          title: Text(title),
-          onTap: () {
-            menuController.changeActiveItemTo(routeName);
-            Get.back();
-            navigationController.navigatorTo(routeName);
-          },
-        ),
+      return ListTile(
+        focusColor: darkGold,
+        hoverColor: darkGold,
+      
+        title: Text(title),
+        onTap: () {
+          menuController.changeActiveItemTo(routeName);
+          Get.back();
+          navigationController.navigatorTo(routeName);
+        },
       );
     }
   }

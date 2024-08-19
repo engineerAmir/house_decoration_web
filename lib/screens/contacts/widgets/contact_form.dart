@@ -29,7 +29,7 @@ class ContactForm extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             child: Text('Send massage' , style: mediumText.copyWith(fontWeight: FontWeight.bold) ,),
           ),
-          Row(
+          const Row(
     
             children: [
               Expanded(
@@ -56,7 +56,7 @@ class ContactForm extends StatelessWidget {
             ],
           ),
           
-           Expanded(
+           const Expanded(
                 child: TextFieldWidget(
                   labalText: 'Massage',
                   scure: false,
@@ -64,7 +64,7 @@ class ContactForm extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 40,)
+              const SizedBox(height: 40,)
         ],
       ),
     );

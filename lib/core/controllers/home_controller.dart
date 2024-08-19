@@ -21,7 +21,7 @@ class HomeController extends GetxController {
   }
 
   Future autoMove() async {
-    await Future.delayed(Duration(seconds: 10), () {
+    await Future.delayed(const Duration(seconds: 10), () {
       next();
     });
     // for (var i = 0; i < 60; i++) {

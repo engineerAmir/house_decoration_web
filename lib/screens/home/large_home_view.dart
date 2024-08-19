@@ -5,22 +5,19 @@ import 'package:house_decoration_web/core/constants/assets.dart';
 import 'package:house_decoration_web/core/constants/controllers.dart';
 import 'package:house_decoration_web/screens/home/widgets.dart/home_projects_widget.dart';
 import 'package:house_decoration_web/screens/home/widgets.dart/large_home_header.dart';
-import 'package:house_decoration_web/screens/home/widgets.dart/large_our_services_widget.dart';
 import 'package:house_decoration_web/screens/home/widgets.dart/our_service_widget.dart';
 import 'package:house_decoration_web/screens/home/widgets.dart/processes.dart';
-import 'package:house_decoration_web/screens/projects/widgets/project_widget.dart';
 
 class LargeHomeView extends StatelessWidget {
   const LargeHomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var _width = MediaQuery.of(context).size.width;
-    var _height = MediaQuery.of(context).size.height;
+    var height = MediaQuery.of(context).size.height;
     return SingleChildScrollView(
       child: Column(children: [
-        Container(
-          height: _height-50,
+        SizedBox(
+          height: height-50,
           child: PageView.builder(
               controller: homeController.controller,
               scrollDirection: Axis.horizontal,
@@ -31,12 +28,12 @@ class LargeHomeView extends StatelessWidget {
                     subTitle: pageHeader[index][2].toString().tr,
                   )),
         ),
-                OurServicesWidget(),
-                SizedBox(height: 50,),
-                HomeProjectsWidget(),
+                const OurServicesWidget(),
+                const SizedBox(height: 50,),
+                const HomeProjectsWidget(),
 
-                SizedBox(height: 50,),
-                Processes()
+                const SizedBox(height: 50,),
+                const Processes()
                 
       ]),
     );

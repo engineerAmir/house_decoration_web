@@ -1,8 +1,10 @@
+// ignore_for_file: unused_import, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:house_decoration_web/core/constants/colors.dart';
 import 'package:house_decoration_web/core/constants/text_style.dart';
 import 'package:house_decoration_web/core/helpers/responsiveness.dart';
-import 'package:house_decoration_web/core/widgets/shadow.dart';
+
 
 class ServiceContainer extends StatelessWidget {
   final String title;
@@ -20,7 +22,6 @@ class ServiceContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _width = MediaQuery.of(context).size.width;
     return Container(
      
       decoration: BoxDecoration(

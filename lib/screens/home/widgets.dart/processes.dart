@@ -20,21 +20,21 @@ class Processes extends StatelessWidget {
       ),
       child: Column(
         children: [
-          SizedBox(height: 30,),
+          const SizedBox(height: 30,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(process.tr, style: largeText.copyWith(fontWeight: FontWeight.bold),)
             ],
           ),
-          Divider(),
-          SizedBox(
+          const Divider(),
+          const SizedBox(
             height: 30,
           ),
           Row(
            // mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              SizedBox(width: 20,),
+              const SizedBox(width: 20,),
               
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -46,14 +46,14 @@ class Processes extends StatelessWidget {
                                 title: item[0].tr, des:  item[1],
                                // subTitle: item[1].tr,
                               ),
-                              SizedBox(height: 30,)
+                              const SizedBox(height: 30,)
                         ],
                       ))
                       .toList()),
-                      SizedBox(width: 20,),
+                      const SizedBox(width: 20,),
           
                       Obx(()=> Expanded(child: Text(homeController.processDes.value.tr, maxLines: 30, style: mediumText.copyWith(fontStyle: FontStyle.italic),))),
-                      SizedBox(width: 10 ,),
+                      const SizedBox(width: 10 ,),
             ],
           ),
         ],

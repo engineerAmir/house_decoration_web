@@ -27,7 +27,7 @@ class MediumOurServicesWidget extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(height: 30,),
+                const SizedBox(height: 30,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -47,7 +47,7 @@ class MediumOurServicesWidget extends StatelessWidget {
                    
                   ],
                 ),
-                 SizedBox(
+                 const SizedBox(
                   height: 50,
                 ),
       
@@ -73,7 +73,7 @@ class MediumOurServicesWidget extends StatelessWidget {
                   ],
       
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 Row(
@@ -95,7 +95,7 @@ class MediumOurServicesWidget extends StatelessWidget {
                   
                   ],
                 ),
-                 SizedBox(
+                 const SizedBox(
                   height: 50,
                 ),
                  Row(
@@ -117,7 +117,7 @@ class MediumOurServicesWidget extends StatelessWidget {
                     ),
                   
                   ],
-                ),SizedBox(
+                ),const SizedBox(
                     height: 50,
                   ),
               ],

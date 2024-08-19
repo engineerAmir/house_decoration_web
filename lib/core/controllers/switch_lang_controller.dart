@@ -10,13 +10,13 @@ class SwitchLangController extends GetxController{
 
   switchLang(){
     if (selectedLang == 'en'){
-      Get.updateLocale(Locale('ar'));
+      Get.updateLocale(const Locale('ar'));
       selectedLang = 'ar'; 
   
  
     }
     else if(selectedLang == 'ar'){
-      Get.updateLocale(Locale('en'));
+      Get.updateLocale(const Locale('en'));
       selectedLang = 'en';
 
     }

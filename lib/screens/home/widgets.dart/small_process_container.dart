@@ -27,14 +27,14 @@ class SmallProcessContainer extends StatelessWidget {
               child: Text(num, style: largeText.copyWith(fontWeight: FontWeight.bold , color: darkGold),),
             ),
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           Text(title, style: mediumText.copyWith(color: darkGold, fontWeight: FontWeight.bold , ),maxLines: 2,textAlign: TextAlign.center,),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
         
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           Text(des, style: normalText.copyWith(fontStyle: FontStyle.italic), maxLines: 30,textAlign: TextAlign.center,),
-            VerticalDivider(),
-            VerticalDivider()
+            const VerticalDivider(),
+            const VerticalDivider()
       
         ],
       ),

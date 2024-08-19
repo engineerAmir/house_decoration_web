@@ -1,9 +1,10 @@
+// ignore_for_file: unused_local_variable, prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 
 import 'package:house_decoration_web/core/constants/controllers.dart';
 
 import 'package:house_decoration_web/core/constants/text_style.dart';
-import 'package:house_decoration_web/core/helpers/responsiveness.dart';
 import 'package:house_decoration_web/core/routing/routes.dart';
 import 'package:house_decoration_web/core/widgets/shadow.dart';
 
@@ -22,8 +23,8 @@ class ProjectContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _width = MediaQuery.of(context).size.width;
-    var _height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     bool isHover = false;
     return Container(
       width: 250,

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:house_decoration_web/core/constants/assets.dart';
@@ -13,7 +15,7 @@ AppBar TopAppBar(BuildContext context, GlobalKey<ScaffoldState> key) => AppBar(
   title: SwitchLangButton(),
   
     leading: Padding(
-      padding: const EdgeInsets.all(10),
+      padding:  EdgeInsets.all(10),
       child: Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
@@ -58,52 +60,51 @@ class AppBarRoutes extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(() => Padding(
         padding: EdgeInsets.only(left: 60),
-        child: Expanded(
-            child: Container(
-          color: menuController.isActive(itemName) ? backGround : null,
-          width: 100,
-          height: double.infinity,
-          child: InkWell(
-            onTap: () {
-              navigationController.navigatorTo(PageRoute);
-              menuController.changeActiveItemTo(itemName);
-            },
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 10),
- 
-                  //  menuController.activeItem.value == servicePageRoute
-                  //     ? PopupMenuButton(
-                  //         child: Text(
-                  //           itemName,
-                  //           style: normalText,
-                  //         ),
-                  //         itemBuilder: (BuildContext context) {
-                  //           return servicesList
-                  //               .map((item) => PopupMenuItem(child: Text(item)))
-                  //               .toList();
-                  //         })
-                  //     :
-                    child:   Text(
-                          itemName,
-                          style: normalText,
-                        ),
-                ),
-                Expanded(child: SizedBox()),
-                if (menuController.isActive(itemName))
-                  Container(
-                    height: 10,
-                    width: double.infinity,
-                    color: darkGold,
-                    child: Text(
-                      menuController.activeItem.value,
-                      style: TextStyle(fontSize: 0),
+        child: Container(
+                  color: menuController.isActive(itemName) ? backGround : null,
+                  width: 100,
+                  height: double.infinity,
+                  child: InkWell(
+        onTap: () {
+          navigationController.navigatorTo(PageRoute);
+          menuController.changeActiveItemTo(itemName);
+        },
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+         
+              //  menuController.activeItem.value == servicePageRoute
+              //     ? PopupMenuButton(
+              //         child: Text(
+              //           itemName,
+              //           style: normalText,
+              //         ),
+              //         itemBuilder: (BuildContext context) {
+              //           return servicesList
+              //               .map((item) => PopupMenuItem(child: Text(item)))
+              //               .toList();
+              //         })
+              //     :
+                child:   Text(
+                      itemName,
+                      style: normalText,
                     ),
-                  )
-              ],
             ),
-          ),
-        ))));
+            Expanded(child: SizedBox()),
+            if (menuController.isActive(itemName))
+              Container(
+                height: 10,
+                width: double.infinity,
+                color: darkGold,
+                child: Text(
+                  menuController.activeItem.value,
+                  style: TextStyle(fontSize: 0),
+                ),
+              )
+          ],
+        ),
+                  ),
+                )));
   }
 }
