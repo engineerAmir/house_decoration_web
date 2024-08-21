@@ -132,3 +132,14 @@ const String welcome = 'WELCOME TO OUR WEBSITE';
 
 
 const String process = 'project processes';
+
+const String unit_info ="Unit information";
+const String personal_info = "personal information";
+const String rooms_num = "Rooms number";
+const String bathroom_nubmer = "Bathrooms number";
+const String area = "area by metters";
+const String governorate= "governorate";
+const String city ='city/compound';
+const String unitType = "Select type of unit";
+const String unitState = "Select state of unit";
+const String book ="fill this form to Book free Appointment for inspection ";

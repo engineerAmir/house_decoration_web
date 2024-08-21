@@ -88,7 +88,7 @@ class Tarnslate extends Translations {
           homeStagingTitle: 'Home Staging',
           constructionServicesTitle: 'Construction Services',
 
-          Process1 : 'Consultation Process',
+          Process1: 'Consultation Process',
           Process2: 'Design Development Process',
           Process3: 'Project Management Process',
           Process4: 'Construction Process',
@@ -100,7 +100,18 @@ class Tarnslate extends Translations {
           slogan3Title: 'Where Every Corner Exudes Elegance',
           slogan4Title: 'Designing Dreams, Building Reality',
           welcome: 'WELCOME TO OUR WEBSITE',
-           process:'project proceses',
+          process: 'project proceses',
+
+          personal_info: "personal information",
+          rooms_num: "Rooms number",
+          bathroom_nubmer: "Bathrooms number",
+          area: "area by metters",
+          governorate: "governorate",
+          city: 'city/compound',
+          unitType: "Select type of unit",
+          unitState : "Select state of unit",
+          unit_info :"Unit information",
+          book :"fill this form to Book free Appointment for inspection ",
         },
         'ar': {
           'lang': 'english',
@@ -131,9 +142,8 @@ class Tarnslate extends Translations {
           slogan1: 'سترى الابداع داخل و خارج بيتك 🌞🏡',
 
           slogan2: 'يمكنك اختيار اي طراز عالمى 🌊',
-         
 
- ourServices: "خدماتنتا",
+          ourServices: "خدماتنتا",
           about: 'معلومات عنا ',
 
           residentialInteriorDesign: 'تحويل منزلك إلى ملاذ',
@@ -189,19 +199,32 @@ class Tarnslate extends Translations {
           homeStagingTitle: 'تجهيز المنازل للبيع',
           constructionServicesTitle: 'خدمات البناء',
 
-         Process1: 'عملية الاستشارة',
+          Process1: 'عملية الاستشارة',
           Process2: 'عملية تطوير التصميم',
           Process3: 'عملية إدارة المشروع',
           Process4: 'عملية البناء',
           Process5: 'عملية ضمان الجودة',
-         Process6: 'عملية الدعم بعد الانتهاء',
+          Process6: 'عملية الدعم بعد الانتهاء',
           slogan1Title: 'انتقالات سلسة من الداخل إلى الخارج',
-          slogan2Title: 'ديكورات بوهيمية أنيقة للحياة العصرية', 
+          slogan2Title: 'ديكورات بوهيمية أنيقة للحياة العصرية',
           slogan3Title: 'حيث يشع كل ركن بالأناقة',
           slogan4Title: 'تصميم الأحلام، بناء الواقع',
           welcome: 'اهلا بكم فى موقعنا',
-          process : "مراحل المشورع ",
+          process: "مراحل المشورع ",
           // Add more Spanish translations here
+
+
+                personal_info: "المعلومات الشخصية",
+          rooms_num: "عدد الغرف",
+          bathroom_nubmer: "عدد الحمامات",
+          area: "المساحة بالامتار",
+          governorate: "المحافظة",
+          city: 'المدينة/الكومبوند',
+          unitType: "اختار نوع الوحدة",
+          unitState : "اختر حالة الوحدة",
+          unit_info :"معلومات الوحدة",
+
+          book :"املأ هذا النموذج لحجز موعد مجاني للفحص ",
         },
       };
 }
