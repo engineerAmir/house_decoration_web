@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:house_decoration_web/core/constants/colors.dart';
+import 'package:house_decoration_web/core/constants/controllers.dart';
 
 class HomeStateDropDown extends StatefulWidget {
   const HomeStateDropDown({super.key});
@@ -12,6 +13,7 @@ class HomeStateDropDown extends StatefulWidget {
 
 class _MyAdvancedDropdownState extends State<HomeStateDropDown> {
   String selectedState = 'مازات على الطوب ';
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +25,7 @@ class _MyAdvancedDropdownState extends State<HomeStateDropDown> {
           onChanged: (String? value) {
             setState(() {
               selectedState = value!;
+              serviceController.selectedState.value= selectedState;
             });
           },
           

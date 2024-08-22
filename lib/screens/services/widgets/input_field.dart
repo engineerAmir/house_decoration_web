@@ -1,23 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:house_decoration_web/core/constants/colors.dart';
 
 class InputField extends StatelessWidget {
   final TextEditingController? controller;
   final labal;
-  InputField({this.controller, this.labal});
+  final validator;
+  final List<TextInputFormatter> formatter;
+  InputField(
+      {this.controller, this.labal, required this.formatter, this.validator});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(5),
       child: TextFormField(
-        validator: (value) {
-          if (value!.isEmpty) {
-            return "this is a required field";
-          } else {
-            return null;
-          }
-        },
+        inputFormatters: formatter,
+        validator: validator == null
+            ? (value) {
+                if (value!.isEmpty) {
+                  return "this is a required field";
+                } else {
+                  return null;
+                }
+              }
+            : validator,
         controller: controller,
 
         //onChanged: onChange ,
@@ -42,5 +49,3 @@ OutlineInputBorder outlineBorderStyle() {
       borderRadius: BorderRadius.circular(10),
       borderSide: const BorderSide(color: lightGold));
 }
-
-

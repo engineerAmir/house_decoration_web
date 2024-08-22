@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:house_decoration_web/screens/services/widgets/home_state_drop_down.dart';
 
 class ServiceController extends GetxController {
   static ServiceController instance = Get.find();
@@ -11,6 +12,7 @@ class ServiceController extends GetxController {
   final roomNumController = TextEditingController();
   final bathRoomController = TextEditingController();
   final areaController = TextEditingController();
+  
   RxString selectedType = "Apartment".obs;
   RxString selectedState = "مازات على الطوب ".obs;
 
@@ -34,15 +36,12 @@ class ServiceController extends GetxController {
         phoneController.text.isEmpty ||
         roomNumController.text.isEmpty ||
         bathRoomController.text.isEmpty ||
-        areaController.text.isEmpty||
-        phoneController.text.contains(alpha) ||
-        roomNumController.text.contains(alpha) ||
-        bathRoomController.text.contains(alpha) ||
-        areaController.text.contains(alpha)) {
+        areaController.text.isEmpty
+      ) {
       message.value = 'Please fill out all fields';
-      privetMassege.value = "must contain number";
+    
       return;
-    } 
+    }
 
     isSubmitting.value = true;
     try {
@@ -53,6 +52,8 @@ class ServiceController extends GetxController {
         'rooms number': roomNumController.text,
         'bathrooms number': bathRoomController.text,
         'area': areaController.text,
+        'type': selectedType.value ,
+        'state': selectedState.value,
         'timestamp': FieldValue.serverTimestamp(),
       });
       message.value = 'Form submitted successfully!';

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:house_decoration_web/core/constants/app_texts.dart';
 import 'package:house_decoration_web/core/constants/colors.dart';
@@ -18,9 +19,7 @@ class ServicesView extends StatelessWidget {
       () => SingleChildScrollView(
         child: Column(
           children: [
-
             ServiceHeader(),
-         
             SizedBox(
               height: 50,
             ),
@@ -50,15 +49,25 @@ class ServicesView extends StatelessWidget {
                   InputField(
                     labal: fullName.tr,
                     controller: serviceController.nameController,
+                    formatter: [
+                      FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z ]'))
+                    ],
                   ),
                   InputField(
                     labal: phone.tr,
                     controller: serviceController.phoneController,
+                    formatter: [
+                      FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+                      LengthLimitingTextInputFormatter(11)
+                    ],
                   ),
                   InputField(
                     labal: mail.tr,
+                    validator: validateEmail,
                     controller: serviceController.emailController,
+                    formatter: [ FilteringTextInputFormatter.allow(RegExp("[0-9@a-zA-Z.]"))],
                   ),
+                 // Text(()=>validateEmail(value)),
                   SizedBox(
                     height: 30,
                   ),
@@ -78,14 +87,22 @@ class ServicesView extends StatelessWidget {
                   InputField(
                     labal: rooms_num.tr,
                     controller: serviceController.roomNumController,
+                    formatter: [
+                      FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+                      LengthLimitingTextInputFormatter(3)
+                    ],
                   ),
                   InputField(
                     labal: bathroom_nubmer.tr,
                     controller: serviceController.bathRoomController,
+                    formatter: [ FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+                      LengthLimitingTextInputFormatter(3)],
                   ),
                   InputField(
                     labal: area.tr,
                     controller: serviceController.areaController,
+                    formatter: [ FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+                      LengthLimitingTextInputFormatter(5)],
                   ),
                   HomeStateDropDown()
                 ],
@@ -97,36 +114,59 @@ class ServicesView extends StatelessWidget {
                 child: Text(
                   serviceController.message.value,
                   style: TextStyle(
-                    color: serviceController.message.value.contains('successfully')
-                        ? darkGold
-                        : Colors.red,
+                    color:
+                        serviceController.message.value.contains('successfully')
+                            ? darkGold
+                            : Colors.red,
                     fontSize: 16,
                   ),
                 ),
               ),
-              SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             Container(
               height: 50,
               width: 200,
-
-              decoration: BoxDecoration(color: darkGold,
-              borderRadius: BorderRadius.circular(30)
-              ),
+              decoration: BoxDecoration(
+                  color: darkGold, borderRadius: BorderRadius.circular(30)),
               child: InkWell(
                 focusColor: hover,
-              
                 onTap: serviceController.isSubmitting.value
                     ? null
                     : () => serviceController.submitForm(),
                 child: serviceController.isSubmitting.value
                     ? CircularProgressIndicator()
-                    : Center(child: Text('Submit', style: TextStyle(fontWeight: FontWeight.bold),)),
+                    : Center(
+                        child: Text(
+                        'Submit',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )),
               ),
             ),
-            SizedBox(height: 70,)
+            SizedBox(
+              height: 70,
+            )
           ],
         ),
       ),
     );
   }
 }
+
+
+
+
+    String? validateEmail(String? value) {
+      const pattern = r"(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'"
+          r'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-'
+          r'\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*'
+          r'[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4]'
+          r'[0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9]'
+          r'[0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\'
+          r'x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])';
+      final regex = RegExp(pattern);
+
+      return value!.isEmpty || !regex.hasMatch(value)
+          ? 'Enter a valid email address'
+          : null;}

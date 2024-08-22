@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:house_decoration_web/core/constants/colors.dart';
+import 'package:house_decoration_web/core/constants/controllers.dart';
 
 class HouseTypeDropDown extends StatefulWidget {
   const HouseTypeDropDown({super.key});
@@ -11,7 +12,7 @@ class HouseTypeDropDown extends StatefulWidget {
 }
 
 class _MyAdvancedDropdownState extends State<HouseTypeDropDown> {
-  String selectedType = "Apartment";
+ static String selectedType = "Apartment";
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +24,7 @@ class _MyAdvancedDropdownState extends State<HouseTypeDropDown> {
           onChanged: (String? value) {
             setState(() {
               selectedType = value!;
+              serviceController.selectedType.value = selectedType;
             });
           },
           
