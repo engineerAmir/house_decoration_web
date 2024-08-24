@@ -113,8 +113,9 @@ class Tarnslate extends Translations {
           unit_info :"Unit information",
           book :"fill this form to Book free Appointment for inspection ",
 
-          links:"Links"
-          
+          links:"Links",
+          send:"Send"
+
         },
         'ar': {
           'lang': 'english',
@@ -229,7 +230,8 @@ class Tarnslate extends Translations {
 
           book :"املأ هذا النموذج لحجز موعد مجاني للفحص ",
 
-           links:"الروابط"
+           links:"الروابط",
+            send:"ارسال"
         },
       };
 }

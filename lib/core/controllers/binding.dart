@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:house_decoration_web/core/controllers/contact_controller.dart';
 import 'package:house_decoration_web/core/controllers/flaot_button_controller.dart';
 import 'package:house_decoration_web/core/controllers/home_controller.dart';
 import 'package:house_decoration_web/core/controllers/navigation_controller.dart';
@@ -19,5 +20,6 @@ class InitialScreenBindings implements Bindings {
     Get.lazyPut(() => ProjectsController());
     Get.lazyPut(() => SwitchLangController());
     Get.lazyPut(() => ServiceController());
+    Get.lazyPut(()=> ContactController());
   }
 }

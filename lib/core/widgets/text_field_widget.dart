@@ -7,13 +7,15 @@ class TextFieldWidget extends StatelessWidget {
   final lines ;
   final  labalText ;
   final scure ; 
-   const TextFieldWidget({super.key,  required this.labalText, required this.scure, this.lines});
+  final TextEditingController con;
+   const TextFieldWidget({super.key,  required this.labalText, required this.scure, this.lines, required this.con});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(5),
       child: TextFormField(
+        controller: con,
         // validator: (value) {
         //   if(value!.isEmpty){
         //     return "this is a required field";

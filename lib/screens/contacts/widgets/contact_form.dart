@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+import 'package:house_decoration_web/core/constants/app_texts.dart';
 import 'package:house_decoration_web/core/constants/colors.dart';
+import 'package:house_decoration_web/core/constants/controllers.dart';
+import 'package:house_decoration_web/core/constants/device_utility.dart';
 import 'package:house_decoration_web/core/constants/text_style.dart';
+import 'package:house_decoration_web/core/controllers/contact_controller.dart';
 import 'package:house_decoration_web/core/helpers/responsiveness.dart';
 import 'package:house_decoration_web/core/widgets/shadow.dart';
 
@@ -29,40 +33,45 @@ class ContactForm extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             child: Text('Send massage' , style: mediumText.copyWith(fontWeight: FontWeight.bold) ,),
           ),
-          const Row(
+           Row(
     
             children: [
               Expanded(
                 child: TextFieldWidget(
                   labalText: 'Name',
-                  scure: false,
+                  scure: false, con: contactController.nameCon  ,
                 ),
               ),
                Expanded(
                 child: TextFieldWidget(
                   labalText: 'Mail',
-                  scure: false,
+                  scure: false, con: contactController.emailCon ,
                 ),
               ),
                Expanded(
                 child: TextFieldWidget(
                   labalText: 'Phone',
-                  scure: false,
+                  scure: false, con: contactController.phoneCon ,
                 ),
               ),
+
+
 
               
              
             ],
           ),
           
-           const Expanded(
+            Expanded(
                 child: TextFieldWidget(
                   labalText: 'Massage',
                   scure: false,
-                  lines: 10,
+                  lines: 10, con: contactController.massageCon ,
                 ),
               ),
+
+
+              TextButton(onPressed:()=>contactController.send() , child: Text(send.tr )),
 
               const SizedBox(height: 40,)
         ],
