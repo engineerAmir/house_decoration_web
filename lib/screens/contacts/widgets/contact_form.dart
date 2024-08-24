@@ -16,64 +16,69 @@ class ContactForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  //  final double _width = MediaQuery.of(context).size.width;
+    //  final double _width = MediaQuery.of(context).size.width;
     return Container(
-      decoration: BoxDecoration(
-         color: darkGold,
-        boxShadow: shadow),
-     
-      margin: EdgeInsets.symmetric(horizontal: ResponsiveWidget.isLargeScreen(context) ? 100 :10),
-      padding: EdgeInsets.symmetric(horizontal: ResponsiveWidget.isLargeScreen(context) ? 100 :10 ),
+      decoration: BoxDecoration(color: darkGold, boxShadow: shadow),
+      margin: EdgeInsets.symmetric(
+          horizontal: ResponsiveWidget.isLargeScreen(context) ? 100 : 10),
+      padding: EdgeInsets.symmetric(
+          horizontal: ResponsiveWidget.isLargeScreen(context) ? 100 : 10),
       width: double.infinity,
-      height: 300,
+      height: 350,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Padding(
             padding: const EdgeInsets.all(20),
-            child: Text('Send massage' , style: mediumText.copyWith(fontWeight: FontWeight.bold) ,),
+            child: Text(
+              'Send massage',
+              style: mediumText.copyWith(fontWeight: FontWeight.bold),
+            ),
           ),
-           Row(
-    
+          Row(
             children: [
               Expanded(
                 child: TextFieldWidget(
                   labalText: 'Name',
-                  scure: false, con: contactController.nameCon  ,
+                  scure: false,
+                  con: contactController.nameCon,
                 ),
               ),
-               Expanded(
+              Expanded(
                 child: TextFieldWidget(
                   labalText: 'Mail',
-                  scure: false, con: contactController.emailCon ,
+                  scure: false,
+                  con: contactController.emailCon,
                 ),
               ),
-               Expanded(
+              Expanded(
                 child: TextFieldWidget(
                   labalText: 'Phone',
-                  scure: false, con: contactController.phoneCon ,
+                  scure: false,
+                  con: contactController.phoneCon,
                 ),
               ),
-
-
-
-              
-             
             ],
           ),
-          
-            Expanded(
-                child: TextFieldWidget(
-                  labalText: 'Massage',
-                  scure: false,
-                  lines: 10, con: contactController.massageCon ,
-                ),
-              ),
-
-
-              TextButton(onPressed:()=>contactController.send() , child: Text(send.tr )),
-
-              const SizedBox(height: 40,)
+          Expanded(
+            child: TextFieldWidget(
+              labalText: 'Massage',
+              scure: false,
+              lines: 10,
+              con: contactController.massageCon,
+            ),
+          ),
+          TextButton(
+              onPressed: contactController.isSubmitting.value
+                  ? null
+                  : () => contactController.send(),
+              child: Text(
+                send.tr,
+                style: mediumText.copyWith(fontWeight: FontWeight.bold),
+              )),
+          const SizedBox(
+            height: 40,
+          )
         ],
       ),
     );
