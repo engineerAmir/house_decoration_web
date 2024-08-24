@@ -112,6 +112,9 @@ class Tarnslate extends Translations {
           unitState : "Select state of unit",
           unit_info :"Unit information",
           book :"fill this form to Book free Appointment for inspection ",
+
+          links:"Links"
+          
         },
         'ar': {
           'lang': 'english',
@@ -225,6 +228,8 @@ class Tarnslate extends Translations {
           unit_info :"معلومات الوحدة",
 
           book :"املأ هذا النموذج لحجز موعد مجاني للفحص ",
+
+           links:"الروابط"
         },
       };
 }

@@ -11,11 +11,11 @@ class ProjectsFillter extends StatelessWidget {
       padding: const EdgeInsets.only(top: 60),
       child: SingleChildScrollView(
         
-       scrollDirection: Axis.vertical,
+       scrollDirection: Axis.horizontal,
       // physics: (),
-        child: Column(
+        child: Row(
           children: projectsMap
-              .map((item) => Column(
+              .map((item) => Row(
                 children: [
                   ProjectsContainer(
                         item: projectsMap.indexOf(item).toInt(),
@@ -25,7 +25,7 @@ class ProjectsFillter extends StatelessWidget {
                       const SizedBox(
                         height: 30,
                         width: 100,
-                        child: Divider(height: 5, color: Colors.white,),
+                        child: VerticalDivider(width: 5, color: Colors.white,),
                       )
                 ],
               ))

@@ -3,6 +3,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
 import 'package:house_decoration_web/core/constants/controllers.dart';
 import 'package:house_decoration_web/screens/projects/widgets/image_view.dart';
+import 'package:house_decoration_web/screens/projects/widgets/photo_viewer.dart';
 import 'package:multi_image_layout/multi_image_layout.dart';
 
 class ProjectWidget extends StatelessWidget {
@@ -18,7 +19,7 @@ class ProjectWidget extends StatelessWidget {
      double _width = MediaQuery.of(context).size.width;
     return Obx(
       () => SizedBox(
-        width: _width - 200,
+        width: _width,
        
           child: StaggeredGrid.count(
         crossAxisCount: 4,
@@ -26,8 +27,8 @@ class ProjectWidget extends StatelessWidget {
             .map((item ) => InkWell(
                   onTap: () {
                    
-                    Get.to(ImageView(inx: item.indexOf(item)));
-                     projectsController.selectImage(item.indexOf(item).toDouble());
+                   Get.to(PhotoViewer(item: item,));
+                    // projectsController.selectImage(item.indexOf(item).toDouble());
                     
                     
                   },

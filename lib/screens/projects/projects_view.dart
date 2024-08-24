@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:house_decoration_web/core/helpers/responsiveness.dart';
+import 'package:house_decoration_web/core/widgets/small_tail.dart';
+import 'package:house_decoration_web/core/widgets/tail.dart';
 
 import 'package:house_decoration_web/screens/projects/widgets/project_header.dart';
 import 'package:house_decoration_web/screens/projects/widgets/project_widget.dart';
@@ -14,17 +17,19 @@ class ProjectsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
-      children: [
-        ProjectsFillter(),
-        SingleChildScrollView(
-          child: Column(
-            // crossAxisAlignment: CrossAxisAlignment.start,
-
-            children: [ProjectHeader(), ProjectWidget()],
-          ),
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        // crossAxisAlignment: CrossAxisAlignment.start,
+    
+        children: [ProjectHeader(),
+         ProjectsFillter(),
+         ProjectWidget(),
+          ResponsiveWidget.isLargeScreen(context)?
+            Tail():
+            SmallTail()
+         
+         ],
+      ),
     );
   }
 }

@@ -3,9 +3,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:house_decoration_web/core/helpers/responsiveness.dart';
+import 'package:house_decoration_web/core/widgets/small_tail.dart';
+import 'package:house_decoration_web/core/widgets/tail.dart';
 import 'package:house_decoration_web/screens/contacts/widgets/contact_form.dart';
 import 'package:house_decoration_web/screens/contacts/widgets/contact_header_page.dart';
 import 'package:house_decoration_web/screens/contacts/widgets/map.dart';
+
 
 class ContactsView extends StatelessWidget {
   const ContactsView({super.key});
@@ -27,7 +30,9 @@ class ContactsView extends StatelessWidget {
               url:
                   "http://maps.google.com/maps?q=30.05825, 30.95825&z=18&output=embed"),
                    
-       SizedBox(height: 300,)
+       SizedBox(height: 70,),
+      
+          
        
         ],
       ),

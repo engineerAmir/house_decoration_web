@@ -143,3 +143,4 @@ const String city ='city/compound';
 const String unitType = "Select type of unit";
 const String unitState = "Select state of unit";
 const String book ="fill this form to Book free Appointment for inspection ";
+const String links = "Links";

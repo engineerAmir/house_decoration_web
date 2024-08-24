@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:house_decoration_web/core/constants/controllers.dart';
+import 'package:house_decoration_web/core/widgets/tail.dart';
 import 'package:house_decoration_web/screens/home/large_home_view.dart';
 import 'package:house_decoration_web/screens/home/widgets.dart/home_projects_widget.dart';
 import 'package:house_decoration_web/screens/home/widgets.dart/large_home_header.dart';
@@ -37,7 +38,8 @@ class MediumHomeView extends StatelessWidget {
                 const SizedBox(height: 50,),
                 const HomeProjectsWidget(),
                 const SizedBox(height: 30,),
-                const Processes()
+                const Processes(),
+              Tail()
       ]),
     );
   }

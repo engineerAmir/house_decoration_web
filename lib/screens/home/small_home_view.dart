@@ -7,11 +7,12 @@ import 'package:house_decoration_web/core/constants/colors.dart';
 import 'package:house_decoration_web/core/constants/controllers.dart';
 import 'package:house_decoration_web/core/constants/text_style.dart';
 import 'package:house_decoration_web/core/widgets/shadow.dart';
-import 'package:house_decoration_web/core/widgets/tail.dart';
+import 'package:house_decoration_web/core/widgets/small_tail.dart';
+
 import 'package:house_decoration_web/screens/home/large_home_view.dart';
 import 'package:house_decoration_web/screens/home/widgets.dart/home_projects_widget.dart';
-import 'package:house_decoration_web/screens/home/widgets.dart/small_home_header.dart';
 import 'package:house_decoration_web/screens/home/widgets.dart/our_service_widget.dart';
+import 'package:house_decoration_web/screens/home/widgets.dart/small_home_header.dart';
 import 'package:house_decoration_web/screens/home/widgets.dart/small_processes.dart';
 
 class SmallHomeView extends StatelessWidget {
@@ -58,7 +59,7 @@ class SmallHomeView extends StatelessWidget {
           ),
           SmallProcesses(),
           SizedBox(height: 50,),
-          Tail()
+          SmallTail()
         ]),
       ),
     );

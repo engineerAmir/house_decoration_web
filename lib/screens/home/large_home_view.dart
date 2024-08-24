@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:house_decoration_web/core/constants/app_texts.dart';
 import 'package:house_decoration_web/core/constants/assets.dart';
 import 'package:house_decoration_web/core/constants/controllers.dart';
+import 'package:house_decoration_web/core/widgets/tail.dart';
 import 'package:house_decoration_web/screens/home/widgets.dart/home_projects_widget.dart';
 import 'package:house_decoration_web/screens/home/widgets.dart/large_home_header.dart';
 import 'package:house_decoration_web/screens/home/widgets.dart/our_service_widget.dart';
@@ -33,7 +34,9 @@ class LargeHomeView extends StatelessWidget {
                 const HomeProjectsWidget(),
 
                 const SizedBox(height: 50,),
-                const Processes()
+                const Processes(),
+
+                Tail()
                 
       ]),
     );

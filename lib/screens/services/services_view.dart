@@ -5,6 +5,9 @@ import 'package:house_decoration_web/core/constants/app_texts.dart';
 import 'package:house_decoration_web/core/constants/colors.dart';
 import 'package:house_decoration_web/core/constants/controllers.dart';
 import 'package:house_decoration_web/core/constants/text_style.dart';
+import 'package:house_decoration_web/core/helpers/responsiveness.dart';
+import 'package:house_decoration_web/core/widgets/small_tail.dart';
+import 'package:house_decoration_web/core/widgets/tail.dart';
 import 'package:house_decoration_web/screens/services/widgets/home_state_drop_down.dart';
 import 'package:house_decoration_web/screens/services/widgets/house_type_drop_down.dart';
 import 'package:house_decoration_web/screens/services/widgets/input_field.dart';
@@ -15,6 +18,9 @@ class ServicesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    RegExp exp = new RegExp(r"([#][^\s#]*)");
+    String str = "#الالاا_سيسيسشي_لأيبيبالابل";
+
     return Obx(
       () => SingleChildScrollView(
         child: Column(
@@ -49,9 +55,7 @@ class ServicesView extends StatelessWidget {
                   InputField(
                     labal: fullName.tr,
                     controller: serviceController.nameController,
-                    formatter: [
-                      FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z ]'))
-                    ],
+                    formatter: [],
                   ),
                   InputField(
                     labal: phone.tr,
@@ -65,9 +69,11 @@ class ServicesView extends StatelessWidget {
                     labal: mail.tr,
                     validator: validateEmail,
                     controller: serviceController.emailController,
-                    formatter: [ FilteringTextInputFormatter.allow(RegExp("[0-9@a-zA-Z.]"))],
+                    formatter: [
+                      FilteringTextInputFormatter.allow(RegExp("[0-9@a-zA-Z.]"))
+                    ],
                   ),
-                 // Text(()=>validateEmail(value)),
+                  // Text(()=>validateEmail(value)),
                   SizedBox(
                     height: 30,
                   ),
@@ -95,14 +101,18 @@ class ServicesView extends StatelessWidget {
                   InputField(
                     labal: bathroom_nubmer.tr,
                     controller: serviceController.bathRoomController,
-                    formatter: [ FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
-                      LengthLimitingTextInputFormatter(3)],
+                    formatter: [
+                      FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+                      LengthLimitingTextInputFormatter(3)
+                    ],
                   ),
                   InputField(
                     labal: area.tr,
                     controller: serviceController.areaController,
-                    formatter: [ FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
-                      LengthLimitingTextInputFormatter(5)],
+                    formatter: [
+                      FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+                      LengthLimitingTextInputFormatter(5)
+                    ],
                   ),
                   HomeStateDropDown()
                 ],
@@ -146,7 +156,10 @@ class ServicesView extends StatelessWidget {
             ),
             SizedBox(
               height: 70,
-            )
+            ),
+            ResponsiveWidget.isLargeScreen(context)?
+            Tail():
+            SmallTail()
           ],
         ),
       ),
@@ -154,19 +167,17 @@ class ServicesView extends StatelessWidget {
   }
 }
 
+String? validateEmail(String? value) {
+  const pattern = r"(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'"
+      r'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-'
+      r'\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*'
+      r'[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4]'
+      r'[0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9]'
+      r'[0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\'
+      r'x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])';
+  final regex = RegExp(pattern);
 
-
-
-    String? validateEmail(String? value) {
-      const pattern = r"(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'"
-          r'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-'
-          r'\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*'
-          r'[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4]'
-          r'[0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9]'
-          r'[0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\'
-          r'x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])';
-      final regex = RegExp(pattern);
-
-      return value!.isEmpty || !regex.hasMatch(value)
-          ? 'Enter a valid email address'
-          : null;}
+  return value!.isEmpty || !regex.hasMatch(value)
+      ? 'Enter a valid email address'
+      : null;
+}

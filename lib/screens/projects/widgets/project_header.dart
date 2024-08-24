@@ -11,7 +11,7 @@ class ProjectHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Obx(()=>Container(
-      width: width - 200,
+      width: width ,
       height: 300,
       decoration: BoxDecoration(
         boxShadow: shadow,
